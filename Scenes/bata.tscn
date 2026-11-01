@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc18clo3vip6d"]
+
+[ext_resource type="Script" uid="uid://c3dcdoyo1e7sx" path="res://Scripts/bata.gd" id="1_jvs1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
+size = Vector2(100, 40)
+
+[node name="Bata" type="StaticBody2D" groups=["bata"]]
+script = ExtResource("1_jvs1f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.903694, 0, 0.0922598, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_344ge")

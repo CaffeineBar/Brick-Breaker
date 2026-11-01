@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhj467ulrmpfn"]
+[gd_scene load_steps=13 format=3 uid="uid://dhj467ulrmpfn"]
 
 [ext_resource type="Texture2D" uid="uid://di8ls11lg75rw" path="res://Assets/Purple.png" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://dpj5ov66envgv" path="res://Scripts/main.gd" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://bc18clo3vip6d" path="res://Scenes/bata.tscn" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://l8f2whwlsyqm" path="res://Scripts/player.gd" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://bgvqldmractn0" path="res://Scripts/bola.gd" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://dvheegvyqiyta" path="res://Assets/bola.png" id="4_jjvhh"]
@@ -20,12 +22,11 @@ size = Vector2(64, 648)
 size = Vector2(64, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bp64"]
-size = Vector2(744, 56)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
-size = Vector2(100, 40)
+size = Vector2(1151, 56)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_kry3j")
+bata_scene = ExtResource("2_21xkr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1152, 648)
@@ -105,25 +106,5 @@ shape = SubResource("RectangleShape2D_21xkr")
 [node name="AreaKeluarBola" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaKeluarBola"]
-position = Vector2(372, 676)
+position = Vector2(575.5, 676)
 shape = SubResource("RectangleShape2D_6bp64")
-
-[node name="Bata" type="StaticBody2D" parent="." groups=["bata"]]
-position = Vector2(576, 60)
-
-[node name="ColorRect" type="ColorRect" parent="Bata"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -20.0
-offset_right = 50.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.903694, 0, 0.0922598, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bata"]
-shape = SubResource("RectangleShape2D_344ge")

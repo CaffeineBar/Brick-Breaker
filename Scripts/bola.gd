@@ -39,7 +39,8 @@ func _physics_process(delta: float) -> void:
 			arah = arah.bounce(collision.get_normal())
 		
 		if collider.is_in_group("bata"):
-			collider.queue_free()
+			if collider.has_method("kena_bola"):
+				collider.kena_bola()
 
 func kalkulasi_arah_baru(collider):
 	var bola_x = position.x
